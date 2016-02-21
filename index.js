@@ -8,4 +8,6 @@ const
   cloneRepos = require('./utils/cloneRepos'),
   cloneBySsh = cloneRepos(repos)
 
-getKeys.then(cloneBySsh)
+getKeys
+  .then(cloneBySsh)
+  .catch(console.log)

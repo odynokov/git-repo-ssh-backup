@@ -15,6 +15,12 @@ module.exports = _ => new Promise((resolve, reject) =>
     all_files_mask,
     {},
     (err, files) => {
+      
+      if (err) {
+        console.log(err)
+        return;
+      }
+      
       keys.publicKey = files.filter(getPublicKey)[0] || ''
       keys.privateKey = keys.publicKey.replace(/\.pub$/, '')
 
